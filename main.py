@@ -125,3 +125,23 @@ df_roberta_summary
 df_roberta_summary.to_csv("results/roberta_tuning_results.csv", index=False)
 print("\nRobERTA tuning results saved to results/roberta_tuning_results.csv")
 print(df_roberta.head())
+
+# Run the best model again
+
+best_model = run_experiment(
+        model_name="roberta-base",
+        strategy="full",
+        learning_rate=4e-4,
+        batch_size=32,
+        epochs=3,
+        lora_config=None)
+
+# Extract the error cases from the best model run
+
+best_model_results = []
+best_model_results.append(best_model)
+best_model_df = pd.DataFrame(best_model_results)
+error_cases = best_model_df.loc[0, 'error_cases']
+pd.set_option('display.max_colwidth', None)
+error_cases.style.set_properties(**{'text-align': 'left'}).set_table_styles([{'selector': 'th', 'props': [('text-align', 'left')]}])
+
