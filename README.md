@@ -10,13 +10,13 @@ git clone https://github.com/derynlee28/DSA4213-Assignment-3.git
 
 cd DSA4213-Assignment-3
 
-3. Create python environment
+2. Create python environment
    
 python3 -m venv venv
 
 source venv/bin/activate
 
-5. Install dependencies:
+3. Install dependencies:
    
 pip install -r requirements.txt
 
