@@ -7,6 +7,11 @@ from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, precisio
 import time
 import random
 import pandas as pd
+import warnings
+import transformers
+
+transformers.logging.set_verbosity(transformers.logging.CRITICAL)
+warnings.filterwarnings('ignore')
 
 from utils import compute_metrics, run_experiment
 

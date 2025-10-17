@@ -5,3 +5,5 @@ peft
 scikit-learn
 numpy
 pandas
+warnings
+transformers
